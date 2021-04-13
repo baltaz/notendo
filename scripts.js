@@ -6,7 +6,7 @@ const colors = ["#ffffff","#badc58","#f6e58d","#7ed6df"];
 const hideElement = e => e.style.display="none";
 const showElement = e => e.style.display="block";
 
-let modal = document.getElementById("modal");
+let modal = document.querySelector(".modal");
 let titleField = document.querySelector(".title-field");
 let descriptionField = document.querySelector(".description-field");
 let currentNote = null;
