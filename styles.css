@@ -1,125 +1,132 @@
 /* GENERAL */
-body{
-    background-color: #e8e8e8;
-    font-family: 'Open Sans', sans-serif;
+body {
+  background-color: #e8e8e8;
+  font-family: "Open Sans", sans-serif;
 }
-button{
-    background-color:#8F80BA;
-    border: none;
-    border-radius: 24px;
-    color: white;
-    cursor: pointer;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
+button {
+  background-color: #8f80ba;
+  border: none;
+  border-radius: 24px;
+  color: white;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
 }
-:focus{
-    outline:none;
+:focus {
+  outline: none;
 }
 
 /* AUX */
-.shadowed{
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.2),0 1px 5px 0 rgba(0,0,0,0.12);
-    transition: box-shadow 0.2s;
+.shadowed {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.2s;
 }
-.shadowed:hover{
-    box-shadow: 0 2px 15px rgba(0,0,0,0.30);
+.shadowed:hover {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* NAVBAR */
-.panel{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 43vw);
-    justify-content: center;
-    margin: 48px 0;
+.panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 43vw);
+  justify-content: center;
+  margin: 48px 0;
 }
-.search-field{
-    border:none;
-    border-radius: 50px;
-    color: #696969;
-    font-family: 'Open Sans', sans-serif;
-    margin-right: 24px;
-    padding: 16px 32px;
-    width: 220px;
+.search-field {
+  border: none;
+  border-radius: 50px;
+  color: #696969;
+  font-family: "Open Sans", sans-serif;
+  margin-right: 24px;
+  padding: 16px 32px;
+  width: 220px;
 }
 
-.add-button{
-    justify-self: end;
+.add-button {
+  justify-self: end;
 }
 
 /*CONTENT*/
 .notes {
-    display: grid;
-    grid-auto-rows: 10px;
-    grid-template-columns: repeat(auto-fill, 300px);
-    justify-content: center;
+  display: grid;
+  grid-auto-rows: 10px;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: center;
 }
 .note {
-    border-radius: 8px;
-    color: #2c3e50;
-    cursor: pointer;
-    margin: 4px;
+  border-radius: 8px;
+  color: #2c3e50;
+  cursor: pointer;
+  margin: 4px;
 }
-.note-inner{
-    line-height: 24px;
-    padding: 24px;
+.note-inner {
+  line-height: 24px;
+  padding: 24px;
 }
-.title{
-    font-weight: bold;
-    margin-bottom: 8px;
-    text-align: center;
+.title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: center;
 }
 
 /* MODAL */
-.modal{
-    background-color:rgba(0,0,0,0.75);
-    display: none;
-    height: 100vh;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100vw;
+.modal {
+  background-color: rgba(0, 0, 0, 0.75);
+  display: none;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
 }
-.modal-content{
-    background-color: #FFF;
-    border-radius: 16px;
-    height: 70vh;
-    left: 50%;
-    max-height: 500px;
-    max-width: 500px;
-    padding: 24px 48px;
-    position: fixed;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 70vw;
-}
-
-.form-field{
-    border: none;
-    font: 16px 'Open Sans', sans-serif;
-    width: 100%;
+.modal-content {
+  background-color: #fff;
+  border-radius: 16px;
+  height: 70vh;
+  left: 50%;
+  max-height: 500px;
+  max-width: 500px;
+  padding: 24px 48px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
 }
 
-.title-field{
-    font-weight: bold;
-    margin-bottom: 16px;
-}
-.description-field{
-    height: 78%;
-    resize: none;
+.form-field {
+  border: none;
+  font: 16px "Open Sans", sans-serif;
+  width: 100%;
 }
 
-.save-button{
-    bottom: 24px;
-    opacity: 0.5;
-    pointer-events: none;
-    position: absolute;
-    right: 48px;
+.title-field {
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+.description-field {
+  height: 78%;
+  resize: none;
 }
 
-.active{
-    opacity: 1;
-    pointer-events: auto;
+.save-button {
+  bottom: 24px;
+  opacity: 0.5;
+  pointer-events: none;
+  position: absolute;
+  right: 48px;
+}
+
+.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media screen and (max-width: 520px) {
+  .search-field {
+    width: 60%;
+  }
 }
