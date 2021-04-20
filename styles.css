@@ -126,7 +126,7 @@ button {
   pointer-events: none;
   position: absolute;
   left: 48px;
-  background-color: brown;
+  background-color: #ee5253;
 }
 
 .active {

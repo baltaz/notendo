@@ -1,7 +1,16 @@
 /*GLOBALS AND AUX STUFF*/
 const getHeightInRows = elem => Math.ceil((elem.offsetHeight/10));
 const getRandomElem = elems => elems[Math.floor(Math.random()*elems.length)];
-const colors = ["#ffffff","#badc58","#f6e58d","#7ed6df"];
+
+const white = "#ffffff";
+const green = "#b8e994";
+const yellow = "#f6e58d";
+const blue = "#7ed6df";
+const orange = "#f3a683";
+const pink = "#ffcccc";
+const red = "#e77f67";
+
+const colors = [white, green, yellow, blue, orange, pink, red];
 
 const hideElement = e => e.style.display="none";
 const showElement = e => e.style.display="block";
