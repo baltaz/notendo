@@ -120,6 +120,15 @@ button {
   right: 48px;
 }
 
+.delete-button {
+  bottom: 24px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  left: 48px;
+  background-color: brown;
+}
+
 .active {
   opacity: 1;
   pointer-events: auto;

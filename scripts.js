@@ -11,10 +11,15 @@ let titleField = document.querySelector(".title-field");
 let descriptionField = document.querySelector(".description-field");
 let currentNote = null;
 
-const openNote = clickedNote => {
+let savedNotes = localStorage.getItem("notes");
+let notesList = (savedNotes)?JSON.parse(savedNotes):[];
+
+
+const editNote = clickedNote => {
     currentNote = clickedNote.currentTarget;
     titleField.value = currentNote.querySelector(".title").innerText;
     descriptionField.value = currentNote.querySelector(".description").innerText;
+    deleteButton.classList.add("active");
     showElement(modal);
 }
 
@@ -42,12 +47,13 @@ const makeNote = newNote => {
     const notesContainer = document.querySelector(".notes");
     notesContainer.prepend(note);
     
-    note.addEventListener("click", openNote);
+    note.addEventListener("click", editNote);
     note.style.gridRowEnd="span "+ getHeightInRows(note.firstElementChild);
 }
 
 /*EVENTS*/
 let saveButton = document.querySelector(".save-button");
+let deleteButton = document.querySelector(".delete-button");
 let addButton = document.querySelector(".add-button");
 
 addButton.onclick = ()=>{
@@ -55,15 +61,13 @@ addButton.onclick = ()=>{
     showElement(modal);
     descriptionField.value="";
     titleField.value="";
+    deleteButton.classList.remove("active");
     saveButton.classList.remove("active")
 };
 
 modal.onclick = e => {if(e.target==modal) hideElement(modal)};
 
-saveButton.onclick = () => {
-    let savedNotes = localStorage.getItem("notes");
-    let notesList = (savedNotes)?JSON.parse(savedNotes):[];
-    
+saveButton.onclick = () => {    
     if(currentNote){
         currentNote.querySelector(".title").innerText = titleField.value;
         currentNote.querySelector(".description").innerText = descriptionField.value;
@@ -91,6 +95,14 @@ saveButton.onclick = () => {
     hideElement(modal);
 };
 
+deleteButton.onclick = () => {
+    const position = notesList.findIndex(e => e.id==currentNote.id);
+    notesList.splice(position,1);
+    currentNote.remove();
+    localStorage.setItem("notes", JSON.stringify(notesList));
+    hideElement(modal);
+};
+
 /*VALIDATIONS*/
 descriptionField.onkeyup = () =>{
     if(descriptionField.value.trim()) saveButton.classList.add("active")
@@ -111,10 +123,6 @@ searchField.onkeyup = () =>{
 }
 
 /*BEGIN*/
-const loadNotes = () => {
-    let savedNotes = localStorage.getItem("notes");
-    let notesList = (!savedNotes)?[]:JSON.parse(savedNotes);
-    notesList.forEach(note=>makeNote(note));
-}
+const loadNotes = () => notesList.forEach(note=>makeNote(note));
 
 loadNotes();
